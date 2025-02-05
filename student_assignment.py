@@ -16,6 +16,7 @@ def hw02_1(q1_pdf):
     text_splitter = CharacterTextSplitter()
     chunk = text_splitter.split_documents(docs)
     print(chunk[-1])
+    return(chunk[-1])
 
 def hw02_2(q2_pdf):
     q2_pdf_path = os.path.join(os.path.abspath(os.path.dirname(__file__)), q2_pdf)
