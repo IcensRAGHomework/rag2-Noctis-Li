@@ -22,8 +22,13 @@ def hw02_2(q2_pdf):
 
     full_text = "\n".join([page.page_content for page in docs])
 
-    splits = ["第\\s[一二三四五六七八九十0-9-]+\\s[章條]"]
+    splits = ["第\\s.+?\\s[章條]"]
     text_splitter = RecursiveCharacterTextSplitter(separators=splits, is_separator_regex=True, chunk_overlap=0, chunk_size=10)
     chunks = text_splitter.split_text(full_text)
 
+    i = 0
+    for chunk in chunks:
+        print(i)
+        i += 1
+        print(chunk)
     return(len(chunks))
