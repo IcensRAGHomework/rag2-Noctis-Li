@@ -22,7 +22,7 @@ def hw02_2(q2_pdf):
 
     full_text = "\n".join([page.page_content for page in docs])
 
-    splits = ["第\\s.+?\\s[章條]"]
+    splits = ["第\\s.+?\\s[章]", "第\\s.+?\\s[條]"]
     text_splitter = RecursiveCharacterTextSplitter(separators=splits, is_separator_regex=True, chunk_overlap=0, chunk_size=10)
     chunks = text_splitter.split_text(full_text)
 
